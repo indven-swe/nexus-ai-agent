@@ -1,5 +1,5 @@
-import { ZeroScriptAdapter } from './adapters/ZeroScriptAdapter.js';
-import { NiloAdapter } from './adapters/NiloAdapter.js';
+import { ZeroScriptAdapter } from '../adapters/ZeroScriptAdapter.js';
+import { NiloAdapter } from '../adapters/NiloAdapter.js';
 import type { AgentInput, AgentResult, AgentStep } from '../types.js';
 
 export class NexusAgent {
@@ -109,6 +109,10 @@ export class NexusAgent {
       return 'I can help with planning, writing, coding, analysis, or general problem solving. Please share the task.';
     }
 
-    return `I can help with this request by breaking it into clear steps and delivering a practical answer. Start by defining the goal, the constraints, and the success criteria, then I can help turn that into an execution plan or polished response.`;
+    return [
+      'I can help with this request by breaking it into clear steps and delivering a practical answer.',
+      'Start by defining the goal, the constraints, and the success criteria.',
+      'From there, I can turn the task into a structured plan, a polished written response, or a technical implementation path.',
+    ].join(' ');
   }
 }
